@@ -1,0 +1,37 @@
+#
+#  JHUB1 XMPP Proxy agent configuration
+#
+xmpp_proxy.server	 =comm.unicate.me
+#xmpp_proxy.port  	 =5222
+xmpp_proxy.jid		 =username@comm.unicate.me
+xmpp_proxy.password  	 =password
+xmpp_proxy.resource  	 =PIbox01
+
+xmpp_proxy.initstatus=PI box: %eth0%
+xmpp_proxy.pidfile	 =__MAIN_PATH__/pid/Jabber.pid
+xmpp_proxy.approved	=jhub1mobile09@comm.unicate.me,jhub1mobile02@comm.unicate.me,jhub1mobile03@comm.unicate.me,jhub1mobile04@comm.unicate.me
+xmpp_proxy.trusted	 =jhub1mobile02@comm.unicate.me,jhub1mobile09@comm.unicate.me
+
+#
+#	JHUB1 XMPP Proxy log and debug
+#
+xmpp_proxy.log	 		=true
+#java_adv_debug not working on text console (ONLY with Eclipse and smackx) 
+xmpp_proxy.java_adv_debug 	=false
+xmpp_proxy.log_presence		=false
+xmpp_proxy.session_pass 	=qaz
+
+#
+#	Incoming Alarms
+#
+xmpp_proxy.udp_port_listen	= false
+xmpp_proxy.udp_port		= 6565
+xmpp_proxy.sms			= true
+xmpp_proxy.im			= true
+#
+#	TWILIO SMS service
+#
+twilio.sid	   =AC91a9de91d9ed0a0d499e29d9f0a99910
+twilio.auth_token  =c3bf666179b33d6666e2f614d9313a65
+twilio.from_number =+442033221111
+

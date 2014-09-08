@@ -1,0 +1,15 @@
+#!/bin/bash
+export JHUB1_DEBUG=1
+JAVA_PATH="java"
+MAIN_PATH="__MAIN_PATH__"
+LIB_PATH="$MAIN_PATH/lib"
+DEBUG="-Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=4000,suspend=n"
+(
+echo $BASHPID > $MAIN_PATH/pid/wrapper.pid
+until $JAVA_PATH -Xmx16m -Xmn2m -Xms8m -Djabberproxy.config=$MAIN_PATH/cfg/JabberProxy.config -Dlocal.config=$MAIN_PATH/cfg/JabberPi.config -Djabberproxy.log4j.config=$MAIN_PATH/cfg/JabberProxy_log4j.config -cp $LIB_PATH/twilio-java-sdk-3.3.10-jar-with-dependencies.jar:$LIB_PATH/log4j-1.2.17.jar:$LIB_PATH/commons-configuration-1.9.jar:$LIB_PATH/commons-lang3-3.1.jar:$LIB_PATH/commons-lang-2.6.jar:$LIB_PATH/smack.jar:$LIB_PATH/smackx.jar:$LIB_PATH/commons-logging-1.1.1.jar:$LIB_PATH/joda-time-2.1.jar:$LIB_PATH/JabberProxy-BUILD.jar:$LIB_PATH/PIJabber-BUILD.jar org.softcognito.rspi.jabber.Driver; do
+echo "$(date +%Y-%m-%d_%H:%M) PI Jabber bot exit with code $?. Respawning..." >> $MAIN_PATH/log/JabberCrash.log
+sleep 60
+done
+) &
+
+
