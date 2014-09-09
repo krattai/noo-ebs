@@ -1,0 +1,18 @@
+language: c
+
+branches:
+  only:
+    - crashey
+    - master
+    - stable-0.4
+    - stable-0.5
+    - stable-0.6
+
+compiler:
+  - gcc
+
+script:
+  - "uname -a"
+  - "bash node_build/run_jshint"
+    # travis has seccomp.h header but does not actually support seccomp.
+  - "./do"
