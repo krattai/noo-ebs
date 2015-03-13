@@ -1,0 +1,17 @@
+<html>
+<pre class="textdiagram" id="fig28">
+     (Next envelope will go here)
+
+          +---------------+
+Frame 1   | Reply address |   <----- Envelope (ROUTER)
+          +---------------+
+Frame 2   | Reply address |   <----- Envelope (ROUTER)
+          +---------------+
+Frame 3   | Reply address |   <----- Envelope (ROUTER)
+          +---+-----------+
+Frame 4   |   |   <------ Empty message frame (REQ)
+          +---+-------------------------------------+
+Frame 5   | Data                                    |
+          +-----------------------------------------+
+</pre>
+</html>

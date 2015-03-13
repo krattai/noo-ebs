@@ -1,0 +1,63 @@
+Notes for The Guide
+
+    
+Chapter 6 topics:
+
+- heartbeating, credit-based flow control, file transfer, serialization
+- version negotiation
+
+Chapter 7 topics:
+
+- how to build a community
+- how to contribute to 0MQ, C4 process in some detail
+
+Chapter 8 topics:
+
+- UDP discovery
+- bridging 0MQ to other protocols
+- web interfaces (including NullMQ)
+- in/out process logging
+    - timestamp
+    - filter I/W/E
+    - capture in log file
+    - cycle log files
+- timer service (subscribe to timer events)
+- disconnected security (for pub/sub)
+
+Chapter 9 topics
+
+- the wire level protocol
+- a minimal TCP stack
+- internals of 0MQ
+- generate bindings in
+    Python
+    C#
+    Java
+    Ruby
+- using GSL :-)
+
+
+Chapter 5 additional topics
+
+++++ Reliable Pipeline (Harmony Pattern)
+
+0MQ's pipeline pattern (using PUSH and PULL sockets) is reliable to the extent that:
+
+* Workers and collectors don't crash;
+* Workers and collectors read their data fast enough to avoid queue overflows.
+
+As with all our reliability patterns, we'll ignore what happens if an upstream node (the ventilator for a pipeline pattern) dies. In practice a ventilator will be the client of another reliability pattern, e.g. Clone.
+
+The Harmony pattern takes pipeline and makes it robust against the only failure we can reasonably handle, namely workers and (less commonly) collectors that crash and lose messages or work.
+
+- assume workers are idempotent
+- assume batch size is known in advance (because...)
+- assume memory enough to hold full batch
+- batch: start (address of collector), tasks, end
+- messages numbered 0 upwards inside batch
+- assume multiple ventilators for same cluster
+- assume collector talks to ventilator, (not same to allow walk-up-and use by ventilators)
+- call ventilator the 'client'
+- if task missing, resend
+- if end of batch missing, resend from last response
+

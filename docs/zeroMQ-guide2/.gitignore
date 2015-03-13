@@ -1,0 +1,16 @@
+wdtemp.txt
+tmp_*
+*.wd
+node_modules
+*.ipc
+*.pdf
+*.pyc
+*.pyo
+*.o
+.DS_Store
+*~
+book.xml
+book.ps
+book.pdf
+oreilly
+
