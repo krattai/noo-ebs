@@ -1,0 +1,5 @@
+By default, raspbian does not come pre-installed with apt-add-repository
+
+To install it:
+
+sudo apt-get install software-properties-common python-software-properties
