@@ -3,3 +3,38 @@ By default, raspbian does not come pre-installed with apt-add-repository
 To install it:
 
 sudo apt-get install software-properties-common python-software-properties
+
+~~~~~~~~~~~~~~
+
+From:
+
+https://www.youtube.com/watch?v=OHEsy9oJEi0
+
+sudo apt­get install python­software­properties 
+sudo apt­add­repository ppa:mosquitto­dev/mosquitto­ppa 
+sudo apt­get update 
+sudo apt­get install mosquitto python­mosquitto 
+sudo apt­get install mosquitto­clients 
+ 
+[mosquitto subscribe Test]  
+mosquitto_sub ­d ­t hello/world 
+[mosquitto Publish Test]   
+mosquitto_pub ­d ­t hello/world ­m "Hello, MQTT. This is my first message." 
+ 
+sudo apt­get install screen 
+git clone git://git.eclipse.org/gitroot/paho/org.eclipse.paho.mqtt.python.git 
+cd org.eclipse.paho.mqtt.python 
+sudo python3 setup.py install 
+sudo python setup.py install 
+cd 
+sudo nano test3.py 
+sudo python3 test3.py 
+ 
+[Create Screen Session] 
+sudo screen ­S [NAME] 
+ 
+[Re­attach/list Screen Session] 
+sudo screen ­r 
+ 
+[Re­attach to id Screen Session] 
+sudo screen ­r [id] 
