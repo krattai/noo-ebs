@@ -1,0 +1,3 @@
+As of 2015/08/01, the initial noo-ebs system uses the broker / subscriber framework of MQTT (mosquitto).
+
+The downside of this is it realies on a system that has "a single point of failure".  There are ways to circumvent this issue, although the best end goal is to move to a peer to peer message system, such as nanomsg.
