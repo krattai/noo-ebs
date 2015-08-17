@@ -10,4 +10,4 @@
 # supplemental, a peer to peer message queue system
 #
 
-sudo apt-get -y install mosquitto python-mosquitto mosquitto-clients
+sudo apt-get -y install mosquitto python-mosquitto mosquitto-client dnsutils
