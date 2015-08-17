@@ -4,7 +4,8 @@ i="0"
 
 while [ $i -lt 9999 ]
 do
-mosquitto_pub -d -t hello/world -m "$(date) : irot LdB, online." -h "uveais.ca"
+ext_ip=$(dig +short myip.opendns.com @resolver1.opendns.com)
+mosquitto_pub -d -t hello/world -m "$(date) : irot LdB, online. IP is $ext_ip" $
 i=$[$i+1]
 sleep 300
 done
