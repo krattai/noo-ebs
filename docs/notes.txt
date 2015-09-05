@@ -114,7 +114,7 @@ You will get something like this:
 
 19 Apr 15:45:23 ntpdate[10948]: step time server 129.6.15.28 offset -45.697084 sec
 
-the timeserver immeidately above is not available, and ntp needs to be installed, so:
+the timeserver immediately above is not available, and ntp needs to be installed, so:
 
 sudo apt-get /y install ntpdate
 
