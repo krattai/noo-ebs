@@ -10,4 +10,8 @@
 # supplemental, a peer to peer message queue system
 #
 
+sudo apt-get update
+
+sudo apt-get -y install openssh-server samba samba-common-bin libnss-mdns lsof
+
 sudo apt-get -y install mosquitto python-mosquitto mosquitto-clients dnsutils
