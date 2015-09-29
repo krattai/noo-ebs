@@ -15,7 +15,7 @@ TEMP_DIR="~/tempdir"
 
 sudo apt-get update
 
-sudo apt-get -y install openssh-server samba samba-common-bin libnss-mdns lsof
+sudo apt-get -y install openssh-server samba samba-common-bin libnss-mdns lsof gogoc
 
 cd ~
 mkdir ${TEMP_DIR}
