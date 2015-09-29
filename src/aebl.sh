@@ -32,4 +32,5 @@ wget -N -nd -w 3 -P ${TEMP_DIR} --limit-rate=50k "https://raw.githubusercontent.
 mv ${TEMP_DIR}/pub.sh $HOME/scripts
 chmod 777 $HOME/scripts/pub.sh
 
-./pub.sh
+cd ~
+scripts/./pub.sh
