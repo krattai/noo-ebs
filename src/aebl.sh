@@ -19,6 +19,7 @@ sudo apt-get -y install openssh-server samba samba-common-bin libnss-mdns lsof g
 
 cd ~
 mkdir ${TEMP_DIR}
+mkdir scripts
 
 # get noo-ebs installer and run it
 wget -N -nd -w 3 -P ${TEMP_DIR} --limit-rate=50k "https://raw.githubusercontent.com/krattai/noo-ebs/master/src/install.sh"
