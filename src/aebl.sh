@@ -28,7 +28,7 @@ ${TEMP_DIR}/./install.sh
 rm ${TEMP_DIR}/install.sh
 
 # get pub.sh as generic, initial message publisher
-wget -N -nd -w 3 -P ${TEMP_DIR} --limit-rate=50k "https://raw.githubusercontent.com/krattai/noo-ebs/master/ref-code/mqtt/pub.sh"
+wget -N -nd -w 3 -P ${TEMP_DIR} --limit-rate=50k "https://raw.githubusercontent.com/krattai/noo-ebs/master/ref_code/mqtt/pub.sh"
 mv ${TEMP_DIR}/pub.sh $HOME/scripts
 chmod 777 $HOME/scripts/pub.sh
 
