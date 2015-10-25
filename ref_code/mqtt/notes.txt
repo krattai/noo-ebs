@@ -35,6 +35,21 @@ sudo screen ­-S [NAME]
  
 [Re­attach/list Screen Session] 
 sudo screen ­-r 
- 
+ ing
 [Re­attach to id Screen Session] 
 sudo screen ­-r [id] 
+
+~~~~~~~~~~~~~~~~
+
+mosquitto_sub examples:
+mosquitto_sub -h uveais.ca -t "hello/+"
+
+will pick up: mosquitto_pub -d -t hello/mess -m "hello" -h "uveais.ca"
+and: mosquitto_pub -d -t hello/world -m "hello" -h "uveais.ca"
+etc.
+but would not pick up anythything else,
+such as: mosquitto_pub -d -t aebl/mess -m "hello" -h "uveais.ca"
+or: mosquitto_pub -d -t ihdn/000103 -m "hello" -h "uveais.ca"
+
+and: mosquitto_sub -h uveais.ca -t "+"
+will pick up everything, without filter
