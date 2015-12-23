@@ -124,3 +124,26 @@ sudo ntpdate pool.ntp.org
 
 and disable ntp daemon to prevent future errors.
 
+~~~~~~
+
+To prepare to compile nanomsg applications:
+
+download nanomsg
+extract and cd to nanomsg path
+sh autogen.sh
+./configure --enable-static
+make
+sudo make install
+
+To compile, this worked:
+gcc -pthread bus.c nanomsg/.libs/libnanomsg.a -o bus -lanl
+
+Also, header paths need to be properly set in code
+
+Apparenty libc.h is for OSX
+
+replace with
+#include <unistd.h>
+#include <string.h>
+#include <pthread.h>
+
