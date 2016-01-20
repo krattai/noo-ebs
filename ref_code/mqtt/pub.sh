@@ -7,7 +7,7 @@ do
 hostn=$(cat /etc/hostname)
 ext_ip=$(dig +short myip.opendns.com @resolver1.opendns.com)
 # mosquitto_pub -d -t hello/world -m "$(date) : irot LdB, online. IP is $ext_ip" -h "uveais.ca"
-mosquitto_pub -d -t aebl/alive -m "$(date) : $hostn device IP $ext_ip is online." -h "2604:8800:100:19a::2"
+mosquitto_pub -d -t aebl/alive -m "$(date) : $hostn device IP $ext_ip is online." -h "2001:5c0:1100:dd00:ba27:ebff:fe2c:41d7"
 # i=$[$i+1]
 sleep 300
 done
