@@ -1,10 +1,11 @@
 /*
  ============================================================================
- Name        : noo-ebs.c
+ Name        : msg_test.c
+ Date        : Jan. 24/2016
  Author      : Kevin Rattai
  Version     : 0.0.001
  Copyright   : working license: The BSD 2-Clause License -> http://opensource.org/licenses/bsd-license.php
- Description : main program for noo-ebs in C, Ansi-style
+ Description : test program to check mqtt message processing
  ============================================================================
 */
 
