@@ -4,7 +4,7 @@ import paho.mqtt.client as mqtt
 
 # reference to MQTT python found here: http://mosquitto.org/documentation/python/
 
-
+# requires:  pip install paho-mqtt
 
 message = 'ON'
 def on_connect(mosq, obj, rc):
