@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import paho.mqtt.client as mqtt
 
 # Unknown license, code found here:  http://stackoverflow.com/questions/31775450/publish-and-subscribe-with-paho-mqtt-client
