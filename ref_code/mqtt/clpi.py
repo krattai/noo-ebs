@@ -11,14 +11,14 @@ import paho.mqtt.client as mqtt
 
 message = 'ON'
 def on_connect(mosq, obj, rc):
-    mqttc.subscribe("aebl", 0)
+    mqttc.subscribe("aebl/hello", 0)
     print("rc: " + str(rc))
 
 def on_message(mosq, obj, msg):
     global message
     print(msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
     message = msg.payload
-    mqttc.publish("uvea",msg.payload);
+    mqttc.publish("uvea/world",msg.payload);
 
 def on_publish(mosq, obj, mid):
     print("mid: " + str(mid))
