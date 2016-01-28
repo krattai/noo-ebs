@@ -14,6 +14,7 @@ def on_connect(mosq, obj, rc):
 #    mqttc.subscribe("aebl/hello", 0)
 #    mqttc.subscribe("aebl/alive", 0)
     mqttc.subscribe("uvea/alive", 0)
+#    mqttc.subscribe("uvea/world", 0)
     print("rc: " + str(rc))
 
 def on_message(mosq, obj, msg):
@@ -22,6 +23,10 @@ def on_message(mosq, obj, msg):
     message = msg.payload
 #    mqttc.publish("uvea/world",msg.payload);
     mqttc.publish("uvea/world","uvea/alive - ACK");
+#    mqttc.publish("uvea/world",msg.payload);
+#    if 'ACK' in message:
+#        mqttc.publish("uvea/world","NAK");
+#
 #    mqttcb.publish("uvea/world",msg.payload);
 
 def on_publish(mosq, obj, mid):
