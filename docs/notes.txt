@@ -257,3 +257,8 @@ http://techarena51.com/index.php/inotify-tools-example/
 Popcorn Time bittorrent streaming client:
 http://www.tecmint.com/watch-movies-online-using-popcorn-time/
 
+~~~~~~~~~~~~~~~~~~~
+
+Need to register client as unique host
+Can use the AEBL channel auto assignement method
+
