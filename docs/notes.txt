@@ -262,3 +262,7 @@ http://www.tecmint.com/watch-movies-online-using-popcorn-time/
 Need to register client as unique host
 Can use the AEBL channel auto assignement method
 
+~~~~~~~~~~~~~~~~~
+
+Method of getting exchange rate from yahoo finance
+
