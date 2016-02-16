@@ -22,7 +22,9 @@ def on_message(mosq, obj, msg):
     print(msg.topic + " " + str(msg.qos) + " " + str(msg.payload))
     message = msg.payload
 #    mqttc.publish("uvea/world",msg.payload);
-    mqttc.publish("uvea/world","uvea/alive - ACK");
+# should absolutely publish to aebl as that is host service provider
+# for noo-ebs content, should publish to a noo-ebs specific channel
+    mqttc.publish("aebl/alive","uvea/alive - ACK");
 #    mqttc.publish("uvea/world",msg.payload);
 #    if 'ACK' in message:
 #        mqttc.publish("uvea/world","NAK");
