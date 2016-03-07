@@ -266,3 +266,13 @@ Can use the AEBL channel auto assignement method
 
 Method of getting exchange rate from yahoo finance
 
+~~~~~~~~~~~~~~~~~~~
+
+Investigating GNUnet for possible MQTT replacement and either use only or use along side nanomsg.
+
+Very important reference to possible p2p MQTT via gnunet, does not show on quick google search and does not suggest MQTT directly:
+sudo apt-get install gnunet
+
+https://gnunet.org/
+https://en.wikipedia.org/wiki/GNUnet
+
