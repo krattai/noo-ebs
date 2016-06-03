@@ -276,3 +276,7 @@ sudo apt-get install gnunet
 https://gnunet.org/
 https://en.wikipedia.org/wiki/GNUnet
 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As possibly noted otherwise, noo-ebs would use IPv6 for routing as it is, by default, a public facing id in most situations.  Unfortunately, most north american tunnel brokers are no longer operating or are no longer allowing subscriptions.  Other tunnel brokers require a static IPv4 in order to create the tunnel.  In order to resolve this, openVPN can be used, with IPv6 only, in order to provide IPv6 capabilities to clients.
+
