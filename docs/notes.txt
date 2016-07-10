@@ -283,11 +283,9 @@ As possibly noted otherwise, noo-ebs would use IPv6 for routing as it is, by def
 ~~~~~~~~~~~~~~~~~~~~~
 
 To upgrade broker installed on ubuntu 14.04, from:
-http://jpmens.net/2013/09/01/installing-mosquitto-on-a-raspberry-pi/
+http://mosquitto.org/download/
 
-curl -O http://repo.mosquitto.org/debian/mosquitto-repo.gpg.key
-sudo apt-key add mosquitto-repo.gpg.key
-rm mosquitto-repo.gpg.key
-cd /etc/apt/sources.list.d/
-sudo curl -O http://repo.mosquitto.org/debian/mosquitto-repo.list
-sudo apt-get update
+
+    sudo apt-add-repository ppa:mosquitto-dev/mosquitto-ppa
+    sudo apt-get update
+
