@@ -289,3 +289,6 @@ http://mosquitto.org/download/
     sudo apt-add-repository ppa:mosquitto-dev/mosquitto-ppa
     sudo apt-get update
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Very important and possibly technically challenging is finding a way to display notifications over top of anything currently on the display at the time of notice.
