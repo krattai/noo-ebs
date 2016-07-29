@@ -292,3 +292,11 @@ http://mosquitto.org/download/
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Very important and possibly technically challenging is finding a way to display notifications over top of anything currently on the display at the time of notice.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+console "ticker"
+while true;do n="$(curl -s http://news.yahoo.com/rss/|sed 's/</\n/g'|grep "title>"|sed -e '/^\// d' -e 's/title>/---------- /g' -e '1,3d'|tr '\n' ' ')";for i in $(eval echo {0..${#n}});do echo -ne "\e[s\e[0;0H${n:$i:$COLUMNS}\e[u";sleep .15;done;done &
+
+
+the command is running in the background, you can just use the fg command to bring it forward and then CTRL+C to stop it or you can view the process when it gets forked and kill -9 $PID
