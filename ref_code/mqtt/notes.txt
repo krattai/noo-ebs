@@ -53,3 +53,11 @@ or: mosquitto_pub -d -t ihdn/000103 -m "hello" -h "uveais.ca"
 
 and: mosquitto_sub -h uveais.ca -t "+"
 will pick up everything, without filter
+
+~~~~~~~~~~~~~~~~~~~~
+
+For tests, remember to include LIB path as shown in -> https://forums.aws.amazon.com/thread.jspa?threadID=218892
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$PWD
+
+And as perm solution, copy to /usr/lib
