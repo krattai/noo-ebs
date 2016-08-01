@@ -1,6 +1,8 @@
 /*
  * explode - read relaynews master batch file & write all the real batch files.
  * for UUNET, the C version needs to fnlock all descriptors
+ * this was found at:
+ * ftp://ftp.stu.edu.tw/FreeBSD/releases/i386/1.0-RELEASE/ports/cnews/
  */
 
 /*
