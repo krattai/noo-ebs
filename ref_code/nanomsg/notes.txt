@@ -1,0 +1,5 @@
+This should contain nanomsg relevent info and reference links
+~~~~~~~~~~~~~~~
+
+http://bravenewgeek.com/dissecting-message-queues/
+https://news.ycombinator.com/item?id=10174586
