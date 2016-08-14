@@ -5,6 +5,9 @@
 #
 # This script monitors noo-ebs broker and acts on messages
 # It is an initial and temporary bridge to handle messages
+#
+# Want to be able to handle files in order to send out PSA
+#  messages on consideration and subscription
 
 import paho.mqtt.client as mqtt
 
