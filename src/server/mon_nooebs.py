@@ -83,6 +83,10 @@ mqttc.on_subscribe = on_subscribe
 # mqttc.connect("aebl.oss", 1883,60)
 mqttc.connect("uveais.ca", 1883,60)
 # mqttc.connect("2001:5c0:1100:dd00:ba27:ebff:fe2c:41d7", 1883,60)
+#
+# New small-srvr V6
+# mqttc.connect("2604:8800:162:dead:216:17ff:feb8:c36", 1883,60)
+
 
 # mosquitto_sub -h 2001:5c0:1100:dd00:ba27:ebff:fe2c:41d7 -t "hello/+" -t "aebl/+" -t "ihdn/+" -t "uvea/+"
 
