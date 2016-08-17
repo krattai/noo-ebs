@@ -5,6 +5,12 @@
 #
 # noo-ebs may not be the right place for this, but here for now
 #
+# Basic premise"
+# + able to take numberical value, and conversion vector
+# + return value in desired currency
+# i.e. 5 hrs CDN (5 hours to canadian): return 75
+# able to grab current values from yahoo
+# assumed that hour equals (arbitrary) wage of $15/hr
 
 # patch system now seeking network info in /run/shm
 TEMP_DIR="~/tempdir"
