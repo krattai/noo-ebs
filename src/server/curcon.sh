@@ -11,6 +11,14 @@
 # i.e. 5 hrs CDN (5 hours to canadian): return 75
 # able to grab current values from yahoo
 # assumed that hour equals (arbitrary) wage of $15/hr
+#
+# $HOME/tmpdir_maintenance/mod_Twitter/./tcli.sh -c statuses_update -s "Today's bitcoin rate CAD\$517.2529 #PSA #am2p"
+#
+# or
+#
+# mosquitto_pub -d -t aebl/social -m "Today's bitcoin rate is CAD\\\$576.5844 and US$ rate is CAD\\\$1.3769 #PSA #am2p" -h "uveais.ca"
+#
+# wget -O btc.txt "http://finance.yahoo.com/d/quotes.csv?e=.csv&f=sl1d1t1&s=BTCCAD=X"
 
 # patch system now seeking network info in /run/shm
 TEMP_DIR="~/tempdir"
