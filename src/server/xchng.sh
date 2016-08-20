@@ -1,4 +1,8 @@
 #!/bin/bash
+#
+# Copyright (C) 2016 Uvea I. S., Kevin Rattai
+#
+# This script is for providing conversions
 
 wget -O btccad.txt "http://finance.yahoo.com/d/quotes.csv?e=.csv&f=sl1d1t1&s=BTCCAD=X"
 wget -O usdcad.txt "http://finance.yahoo.com/d/quotes.csv?e=.csv&f=sl1d1t1&s=USDCAD=X"
