@@ -2,7 +2,8 @@
 #
 # Copyright (C) 2016 Uvea I. S., Kevin Rattai
 #
-# This script is for providing conversions
+# This script is for providing conversions, basis being 1 hour
+# of which, 1 hour would be $15/hr
 
 wget -O btccad.txt "http://finance.yahoo.com/d/quotes.csv?e=.csv&f=sl1d1t1&s=BTCCAD=X"
 wget -O usdcad.txt "http://finance.yahoo.com/d/quotes.csv?e=.csv&f=sl1d1t1&s=USDCAD=X"
