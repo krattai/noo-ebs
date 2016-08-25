@@ -1,7 +1,7 @@
 #!/bin/bash
 # Currency converter
 #
-# Copyright (C) 2015 Uvea I. S., Kevin Rattai
+# Copyright (C) 2016 Uvea I. S., Kevin Rattai
 #
 # noo-ebs may not be the right place for this, but here for now
 #
@@ -20,27 +20,67 @@
 #
 # wget -O btc.txt "http://finance.yahoo.com/d/quotes.csv?e=.csv&f=sl1d1t1&s=BTCCAD=X"
 
-# patch system now seeking network info in /run/shm
-TEMP_DIR="~/tempdir"
+# For certain functions, use case:
+#
+#
+# mosquitto_sub -h 2001:5c0:1100:dd00:240:63ff:fefd:d3f1 -t "hello/+" -t "aebl/+" -t "ihdn/+" -t "uvea/+" |
+# while IFS= read -r line
+#     do
+#           if [[ $line = "sixxs alive" ]]; then
+#               echo "$(date +"%T") - sixxs ACK"
+#               echo " "
+#           fi
+#           if [[ $line == *"ihdnsrvr IPv6"* ]]; then
+#               echo "$(date +"%T") - ihdnsrvr ACK"
+#               echo "$line"
+#               echo " "
+#           fi
+#           if [[ $line == *"played"* ]]; then
+#               echo "$(date +"%T") - play log"
+#               echo "$line"
+#               echo " "
+#           fi
+#
+# done
+#
+# And use AEBL playlist.sh and process_playlist.sh for example code
+#  to process files
 
-sudo apt-get update
+i="0"
 
-sudo apt-get -y install openssh-server samba samba-common-bin libnss-mdns lsof gogoc
+while [ $i -lt 1 ]
+do
+    mosquitto_sub -h uveais.ca -t -t "aebl/#" -t "uvea/#" |
+    while IFS= read -r line
+        do
+#           if [[ $line = "sixxs alive" ]]; then
+#               echo "$(date +"%T") - sixxs ACK"
+#               echo " "
+#           fi
+#           if [[ $line == *"ihdnsrvr IPv6"* ]]; then
+#               echo "$(date +"%T") - ihdnsrvr ACK"
+#               echo "$line"
+#               echo " "
+#           fi
+#           if [[ $line == *"played"* ]]; then
+#               echo "$(date +"%T") - play log"
+#               echo "$line"
+#               echo " "
+#           fi
+#
+        done
 
-cd ~
-mkdir ${TEMP_DIR}
-mkdir scripts
+# hostn=$(cat /etc/hostname)
+# ext_ip4=$(dig +short myip.opendns.com @resolver1.opendns.com)
+# ext_ip6=$(curl icanhazip.com)
+# mosquitto_pub -d -t hello/world -m "$(date) : irot LdB, online. IP is $ext_ip" -h "uveais.ca"
+# mosquitto_pub -d -t uvea/alive -m "$(date) : $hostn server IP $ext_ip is online." -h "2604:8800:100:19a::2"
+# mosquitto_pub -d -t uvea/alive -m "$(date) : $hostn IPv4 $ext_ip4 is online." -h "2001:5c0:1100:dd00:240:63ff:fefd:d3f1"
+# mosquitto_pub -d -t aebl/alive -m "$(date) : $hostn IPv6 $ext_ip6 is online." -h "2001:5c0:1100:dd00:240:63ff:fefd:d3f1"
+# mosquitto_pub -d -t uvea/alive -m "$(date) : $hostn IPv4 $ext_ip4 is online." -h "ihdn.ca"
+# mosquitto_pub -d -t aebl/alive -m "$(date) : $hostn IPv6 $ext_ip6 is online." -h "uveais.ca"
+# i=$[$i+1]
+# sleep 300
+done
 
-# get noo-ebs installer and run it
-wget -N -nd -w 3 -P ${TEMP_DIR} --limit-rate=50k "https://raw.githubusercontent.com/krattai/noo-ebs/master/src/install.sh"
-chmod 777 ${TEMP_DIR}/install.sh
-${TEMP_DIR}/./install.sh
-rm ${TEMP_DIR}/install.sh
-
-# get pub.sh as generic, initial message publisher
-wget -N -nd -w 3 -P ${TEMP_DIR} --limit-rate=50k "https://raw.githubusercontent.com/krattai/noo-ebs/master/ref_code/mqtt/pub.sh"
-mv ${TEMP_DIR}/pub.sh $HOME/scripts
-chmod 777 $HOME/scripts/pub.sh
-
-cd ~
-scripts/./pub.sh
+exit 0
