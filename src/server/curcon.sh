@@ -19,6 +19,8 @@
 # mosquitto_pub -d -t aebl/social -m "Today's bitcoin rate is CAD\\\$576.5844 and US$ rate is CAD\\\$1.3769 #PSA #am2p" -h "uveais.ca"
 #
 # wget -O btc.txt "http://finance.yahoo.com/d/quotes.csv?e=.csv&f=sl1d1t1&s=BTCCAD=X"
+#
+# btc=$(awk -F "\"*,\"*" '{print $2}' btccad.txt)
 
 # For certain functions, use case:
 #
