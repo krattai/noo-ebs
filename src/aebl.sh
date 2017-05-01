@@ -17,17 +17,17 @@ sudo apt-get update
 
 # gogoc no longer available from provider and openssh not needed until vpn files installed
 # sudo apt-get -y install openssh-server samba samba-common-bin libnss-mdns lsof gogoc
-sudo apt-get -y install samba samba-common-bin libnss-mdns lsof
-
+sudo apt-get -y install samba samba-common-bin libnss-mdns lsof mosquitto python-mosquitto mosquitto-clients dnsutils
 cd ~
 mkdir ${TEMP_DIR}
 mkdir scripts
 
+# no sense getting install.sh as can do that function in this script
 # get noo-ebs installer and run it
-wget -N -nd -w 3 -P ${TEMP_DIR} --limit-rate=50k "https://raw.githubusercontent.com/krattai/noo-ebs/master/src/install.sh"
-chmod 777 ${TEMP_DIR}/install.sh
-${TEMP_DIR}/./install.sh
-rm ${TEMP_DIR}/install.sh
+# wget -N -nd -w 3 -P ${TEMP_DIR} --limit-rate=50k "https://raw.githubusercontent.com/krattai/noo-ebs/master/src/install.sh"
+# chmod 777 ${TEMP_DIR}/install.sh
+# ${TEMP_DIR}/./install.sh
+# rm ${TEMP_DIR}/install.sh
 
 # get pub.sh as generic, initial message publisher
 wget -N -nd -w 3 -P ${TEMP_DIR} --limit-rate=50k "https://raw.githubusercontent.com/krattai/noo-ebs/master/ref_code/mqtt/pub.sh"
