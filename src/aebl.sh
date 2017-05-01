@@ -1,7 +1,7 @@
 #!/bin/bash
 # installs noo-ebs
 #
-# Copyright (C) 2015 Uvea I. S., Kevin Rattai
+# Copyright (C) 2015 - 2017 Uvea I. S., Kevin Rattai
 #
 # Obviously, in this first instance of noo-ebs for test and
 # production, this script installs MQTT
@@ -33,4 +33,6 @@ mv ${TEMP_DIR}/pub.sh $HOME/scripts
 chmod 777 $HOME/scripts/pub.sh
 
 cd ~
-scripts/./pub.sh
+scripts/./pub.sh &
+
+exit
