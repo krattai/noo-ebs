@@ -7,6 +7,9 @@
 # v010 - January 11th 2015.
 #      Initial version. Subscribe to MQTT broker and act upon messages received.
 #
+#      June 10, 2017
+#      Should have a list of brokers that would be working using some form of p2p message system
+#
 
 mosquitto_sub -h 2001:5c0:1100:dd00:240:63ff:fefd:d3f1 -t "hello/+" -t "aebl/+" -t "ihdn/+" -t "uvea/+" |
 while IFS= read -r line
