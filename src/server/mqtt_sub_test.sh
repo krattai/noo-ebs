@@ -11,7 +11,11 @@
 #      Should have a list of brokers that would be working using some form of p2p message system
 #
 
-mosquitto_sub -h 2001:5c0:1100:dd00:240:63ff:fefd:d3f1 -t "hello/+" -t "aebl/+" -t "ihdn/+" -t "uvea/+" |
+# mosquitto_sub -h 2001:5c0:1100:dd00:240:63ff:fefd:d3f1 -t "hello/+" -t "aebl/+" -t "ihdn/+" -t "uvea/+" |
+# added a carriage return to eol of line above, otherwise it believed nl was part of comment
+
+# using new bjour server as MQTT broker for now
+mosquitto_sub -h 24.76.85.57 -t "hello/+" -t "aebl/+" -t "nooebs/+" -t "uvea/+" |
 while IFS= read -r line
     do
           if [[ $line = "sixxs alive" ]]; then
